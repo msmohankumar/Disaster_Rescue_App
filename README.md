@@ -72,13 +72,13 @@ This project is licensed under the MIT License.
 
 ## Screenshots
 - Sample Input
-  ![sample_input](https://github.com/msmohankumar/Disaster_Response_App/assets/153971484/f0275d3d-ed81-40f2-8943-2ee55dd9e28d)
+  ![sample_input](https://github.com/msmohankumar/Disaster_Rescue_App/assets/153971484/0ed4d427-7aca-4f4b-a4c5-5ab6cdb19f39)
 - Sample Output
-![sample_output](https://github.com/msmohankumar/Disaster_Response_App/assets/153971484/cb90b6d5-7a22-45d9-94a8-2d6d5e179500)
+![sample_output](https://github.com/msmohankumar/Disaster_Rescue_App/assets/153971484/7e7d9bc7-506f-4390-95a4-1970e2eefd81)
 - Main Page
-![main_page](https://github.com/msmohankumar/Disaster_Response_App/assets/153971484/8b1b8e8d-b3d7-453f-9035-18f595093604)
+![main_page](https://github.com/msmohankumar/Disaster_Rescue_App/assets/153971484/578c9df0-5450-4ff7-b3dd-251a51bae3e6)
 - Process Data
-  ![process_data](https://github.com/msmohankumar/Disaster_Response_App/assets/153971484/365a9206-45ee-46a9-986f-0b61d4da132c)
+  ![Process_data](https://github.com/msmohankumar/Disaster_Rescue_App/assets/153971484/875546e3-3909-4f08-940a-f2e6046ac936)
 - **Train Classifier without Category Level Precision Recall**
-  ![Train_data](https://github.com/msmohankumar/Disaster_Response_App/assets/153971484/46599e89-c691-4b94-8a16-e58ee410d43c)
+  ![Train_classifier_data](https://github.com/msmohankumar/Disaster_Rescue_App/assets/153971484/37e0d223-eaca-4f93-92fa-e27665712739)
 
