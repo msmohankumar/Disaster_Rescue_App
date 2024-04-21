@@ -1,6 +1,6 @@
 # Disaster Response Pipeline Project (Udacity - Data Science Nanodegree)
 
-![intro]https://github.com/msmohankumar/Disaster_Rescue_App/blob/main/screenshots/intro.png
+![intro](https://github.com/msmohankumar/Disaster_Rescue_App/assets/153971484/16b042bd-c631-437c-92c3-731a03ee306c)
 
 [(https://github.com/msmohankumar/Disaster_Response_App/assets/153971484/1af397f7-7751-4353-b9be-0d0948c30ee6)](https://github.com/msmohankumar/Disaster_Rescue_App/blob/main/screenshots/intro.png)
 
