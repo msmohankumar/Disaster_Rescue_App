@@ -22,6 +22,17 @@ nltk.download('punkt')
 nltk.download('wordnet')
 
 def load_data(database_filepath):
+    """
+    Load data from the SQLite database.
+
+    Parameters:
+    database_filepath (str): Filepath of the SQLite database.
+
+    Returns:
+    X (pandas.DataFrame): Feature variables.
+    y (pandas.DataFrame): Target variables.
+    category_names (list): List of category names.
+    """
     try:
         engine = create_engine(f'sqlite:///{database_filepath}')
         df = pd.read_sql_table('disaster_data', engine)
@@ -35,6 +46,15 @@ def load_data(database_filepath):
     return X, y, category_names
 
 def tokenize(text):
+    """
+    Tokenize and lemmatize the text.
+
+    Parameters:
+    text (str): Text to be tokenized and lemmatized.
+
+    Returns:
+    tokens (list): List of tokens.
+    """
     try:
         tokens = word_tokenize(text)
         lemmatizer = WordNetLemmatizer()
@@ -46,6 +66,12 @@ def tokenize(text):
     return tokens
 
 def build_model():
+    """
+    Build and configure the machine learning model.
+
+    Returns:
+    grid_search (GridSearchCV): GridSearchCV object with the model pipeline and parameter grid.
+    """
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
@@ -65,6 +91,15 @@ def build_model():
     return grid_search
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    Evaluate the performance of the model.
+
+    Parameters:
+    model: Trained model.
+    X_test (pandas.DataFrame): Testing features.
+    Y_test (pandas.DataFrame): Testing targets.
+    category_names (list): List of category names.
+    """
     Y_pred = model.predict(X_test)
     
     for category_name in category_names:
@@ -73,9 +108,19 @@ def evaluate_model(model, X_test, Y_test, category_names):
         print('--------------------------------------')
 
 def save_model(model, model_filepath):
+    """
+    Save the trained model.
+
+    Parameters:
+    model: Trained model.
+    model_filepath (str): Filepath to save the model.
+    """
     joblib.dump(model, model_filepath)
 
 def main():
+    """
+    Main function to execute the training script.
+    """
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
 
