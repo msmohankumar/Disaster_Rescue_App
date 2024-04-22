@@ -39,6 +39,29 @@ The project is divided into the following key sections:
 ### Installing
 Clone the git repository:
 
+- Root Directory
+    - data: Contains data files and data processing scripts.
+        - disaster_categories.csv: Categories data file.
+        - disaster_messages.csv: Messages data file.
+        - DisasterResponse.db
+        - process_data.py: ETL pipeline script to clean and process data.
+    - models: Contains machine learning model scripts.
+        - train_classifier.py: Script to train the classifier and save the model.
+        - classifier.pkl
+    - screenshots: Contains screenshots of the web app.
+        - intro.png: Introduction screenshot.
+        - sample_input.png: Sample input screenshot.
+        - sample_output.png: Sample output screenshot.
+        - main_page.png: Main page screenshot.
+        - process_data.png: Process data screenshot.
+        - train_classifier_data.png: Train classifier screenshot.
+    - app: Contains the web application files.
+        - run.py: Script to run the web app.
+        - templates: HTML templates for the web app.
+            - master.html: Main page template.
+            - go.html: Classification result template.
+    - README.md: Project README file.
+
 
 ### Executing Program
 1. Run the ETL pipeline to clean data and store the processed data in the database:
