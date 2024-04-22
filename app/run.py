@@ -1,4 +1,3 @@
-
 import json
 import plotly
 import pandas as pd
@@ -31,6 +30,11 @@ df = pd.read_sql_table('disaster_data', engine)  # Adjust the table name if need
 # load model
 model = joblib.load("../models/classifier.pkl")
 
+# Developer's information
+developer_name = "M S Mohan Kumar"
+linkedin_url = "https://www.linkedin.com/in/ms-mohan-kumar-28b47038/"
+twitter_url = "https://twitter.com/msmohankumar"
+
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
 @app.route('/index')
@@ -39,6 +43,10 @@ def index():
     # extract data needed for visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    
+    # Additional visualization: Distribution of Top 10 Response Categories
+    response_counts = df.iloc[:,4:].sum().sort_values(ascending=False)[:10]  # Top 10 response categories
+    response_names = list(response_counts.index)
     
     # create visuals
     graphs = [
@@ -59,6 +67,24 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        {
+            'data': [
+                Bar(
+                    x=response_names,
+                    y=response_counts
+                )
+            ],
+
+            'layout': {
+                'title': 'Top 10 Response Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category"
+                }
+            }
         }
     ]
     
@@ -66,8 +92,9 @@ def index():
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
     
-    # render web page with plotly graphs
-    return render_template('master.html', ids=ids, graphJSON=graphJSON)
+    # render web page with plotly graphs and developer information
+    return render_template('master.html', ids=ids, graphJSON=graphJSON, developer_name=developer_name,
+                           linkedin_url=linkedin_url, twitter_url=twitter_url)
 
 
 # web page that handles user query and displays model results
